@@ -338,10 +338,12 @@ Using the annoyingSong function below do the following:
 // annoyingSong(4);
 
 function annoyingSong(startingNum){
+
         while (startingNum > 0){
           // console.log(startingNum +" bottles of soda on the wall, " +startingNum + " bottles of soda, take one down pass it around " + startingNum-1 + " bottles of soda on the wall");
-          console.log(`${startingNum} bottles of soda on the wall, ${startingNum} bottles of soda, take one down pass it around ${startingNum - 1} bottles of soda on the wall`);
+          return `${startingNum} bottles of soda on the wall, ${startingNum} bottles of soda, take one down pass it around ${startingNum - 1} bottles of soda on the wall`;
           startingNum--;
+          
         }
   }
   annoyingSong(4);
