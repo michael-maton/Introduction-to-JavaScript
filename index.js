@@ -160,87 +160,90 @@ Use the game function below to do the following:
   HINT: While you can complete this with only conditionals based on strings, it may help to equate choice to a number when using Math.random()
 */
 
+let pcRand = Math.random();
 
-// function game(userChoice){
-//     let pcChoice = Math.random();
-//     // console.log(userChoice);
-//     if (pcChoice <= 0.333){
-//       pcChoice = 'rock';
-//     }
-//     else if (pcChoice > 0.333 && pcChoice <= 0.667){
-//       pcChoice = 'paper';
-//     }
-//     else{
-//       pcChoice = 'scissors';
-//     }
-//     // console.log(pcChoice);
-//     if (userChoice === 'rock' && pcChoice === 'rock'){
-//       return "it's a tie";
-//     }
-//     else if (userChoice === 'rock' && pcChoice === 'paper') {
-//       return 'you lose!';
-//     }
-//     else if (userChoice === 'rock' && pcChoice === 'scissors'){
-//       return 'you win!';
-//     }
-//     else if (userChoice === 'paper' && pcChoice === 'rock'){
-//       return 'you win!';
-//     }
-//     else if(userChoice === 'paper' && pcChoice === 'paper'){
-//       return "it's a tie";
-//     }
-//     else if (userChoice === 'paper' && pcChoice === 'scissors'){
-//       return 'you lose!';
-//     }
-//     else if (userChoice === 'scissors' && pcChoice === 'rock'){
-//       return 'you lose!';
-//     }
-//     else if(userChoice === 'scissors' && pcChoice === 'paper'){
-//       return 'you win!';
-//     }
-//     else if (userChoice === 'scissors' && pcChoice === 'scissors'){
-//       return "it's a tie";
-//     }
-//     else{
-//       return "it's a tie";
-//     }
-// }
+if (pcRand <= 0.333){
+    pcRand = 'rock';
+    }
+    else if (pcRand > 0.333 && pcRand <= 0.667){
+      pcRand = 'paper';
+    }
+    else{
+      pcRand = 'scissors';
+    }
 
-// console.log(game('paper'));
-
-function game(userChoice) {
-  let phrase = `it's a tie`;
-  let compChoice = Math.random();
-  if (compChoice <= 0.33) {
-    compChoice = 'rock';
-  } else if (compChoice > 0.33 && compChoice <= 0.66) {
-    compChoice = 'scissors';
-  } else {
-    compChoice = 'paper';
-  }
-  if (compChoice === 'rock') {
-    if (userChoice === 'paper') {
-      phrase = 'you win!';
-    } else if (userChoice === 'scissors') {
-      phrase = 'you lose';
+function game(userChoice, pcChoice){
+    
+    // console.log(userChoice);
+    
+    // console.log(pcChoice);
+    if (userChoice === 'rock' && pcChoice === 'rock'){
+      return "it's a tie";
     }
-  }
-  if (compChoice === 'scissors') {
-    if (userChoice === 'rock') {
-      phrase = 'you win!';
-    } else if (userChoice === 'paper') {
-      phrase = 'you lose!';
+    else if (userChoice === 'rock' && pcChoice === 'paper') {
+      return 'you lose!';
     }
-  }
-  if (compChoice === 'paper') {
-    if (userChoice === 'rock') {
-      phrase = 'you lose!';
-    } else if (userChoice === 'scissors') {
-      phrase = 'you win!';
+    else if (userChoice === 'rock' && pcChoice === 'scissors'){
+      return 'you win!';
     }
-  }
-  return phrase;
+    else if (userChoice === 'paper' && pcChoice === 'rock'){
+      return 'you win!';
+    }
+    else if(userChoice === 'paper' && pcChoice === 'paper'){
+      return "it's a tie";
+    }
+    else if (userChoice === 'paper' && pcChoice === 'scissors'){
+      return 'you lose!';
+    }
+    else if (userChoice === 'scissors' && pcChoice === 'rock'){
+      return 'you lose!';
+    }
+    else if(userChoice === 'scissors' && pcChoice === 'paper'){
+      return 'you win!';
+    }
+    else if (userChoice === 'scissors' && pcChoice === 'scissors'){
+      return "it's a tie";
+    }
+    else{
+      return "it's a tie";
+    }
 }
+
+console.log(game('paper', pcRand));
+
+// function game(userChoice) {
+//   let phrase = `it's a tie`;
+//   let compChoice = Math.random();
+//   if (compChoice <= 0.33) {
+//     compChoice = 'rock';
+//   } else if (compChoice > 0.33 && compChoice <= 0.66) {
+//     compChoice = 'scissors';
+//   } else {
+//     compChoice = 'paper';
+//   }
+//   if (compChoice === 'rock') {
+//     if (userChoice === 'paper') {
+//       phrase = 'you win!';
+//     } else if (userChoice === 'scissors') {
+//       phrase = 'you lose';
+//     }
+//   }
+//   if (compChoice === 'scissors') {
+//     if (userChoice === 'rock') {
+//       phrase = 'you win!';
+//     } else if (userChoice === 'paper') {
+//       phrase = 'you lose!';
+//     }
+//   }
+//   if (compChoice === 'paper') {
+//     if (userChoice === 'rock') {
+//       phrase = 'you lose!';
+//     } else if (userChoice === 'scissors') {
+//       phrase = 'you win!';
+//     }
+//   }
+//   return phrase;
+// }
 
 console.log(game('paper'));
 // let pcChoice = Math.random();
@@ -267,6 +270,7 @@ console.log(game('paper'));
 // }
 // console.log(game('paper', pcChoice));
     
+
 // function game(userChoice){
 //   if (userChoice === 'rock'){
 //     userChoice = 0.25;
