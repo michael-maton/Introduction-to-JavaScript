@@ -17,8 +17,13 @@ Do the following:
 
    HINT: no function required
 */
-
-
+let votingAge = 19;
+if (votingAge >= 18){
+  console.log('true');
+}
+else{
+  console.log('false');
+}
 
 /*
 Task 1b - Values
@@ -31,8 +36,12 @@ Do the following:
    HINT: no function required
 */
 
-
-
+let task1bValue1 = 1;
+let task1bValue2 = 2;
+if (task1bValue2 > 0){
+  task1bValue1 = task1bValue2;
+  console.log(task1bValue1);
+}
 
 
 /*
@@ -46,7 +55,9 @@ Do the following:
    HINT: look up the Number method
 */
 
-
+let task1cString = '1999';
+let numString = Number(task1cString);
+console.log(numString);
 
 
 /*
@@ -58,10 +69,10 @@ Do the following:
    3. Multiply a and b and return the answer
 */
 
-function multiply(/*add your code here*/){
-    /*add your code here*/
+function multiply(a, b){
+    return a*b;
   }
-
+console.log(multiply(3,4));
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 2 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
@@ -74,10 +85,10 @@ Do the following:
    3. Return the newly calculated age
 */
 
-function dogYears(/*add your code here*/){
-    /*add your code here*/
+function dogYears(humanYears){
+    return humanYears*7;
 }
-
+console.log(dogYears(10));
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
@@ -107,11 +118,33 @@ Use the hungryDog function and feeding requirements below to do the following:
   NOTE: If done correctly, a weight of 15 lbs and age of 1 year would return 0.44999999999999996
 */  
 
-function hungryDog(/*add your code here*/){
-    /*add your code here*/
+function hungryDog(weightLBS, ageYRS){
+    if (ageYRS >= 1){
+      if (weightLBS <= 5){
+        return weightLBS*0.05;
+      }
+      else if (weightLBS > 6 && weightLBS <= 10){
+        return weightLBS*0.04;
+      }
+      else if (weightLBS > 10 && weightLBS <=15){
+        return weightLBS*0.03;
+      }
+      else {
+        return weightLBS*0.02;
+      }
+    }
+    else if (ageYRS >= 0.1667 && ageYRS <= 0.333){
+      return weightLBS*0.10;
+    }
+    else if (ageYRS > 0.333 && ageYRS <= 0.583){
+      return weightLBS*0.05;
+    }
+    else {
+      return weightLBS*0.04;
+    }
   }
 
-
+console.log(hungryDog(15, 1));
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
@@ -127,10 +160,135 @@ Use the game function below to do the following:
   HINT: While you can complete this with only conditionals based on strings, it may help to equate choice to a number when using Math.random()
 */
 
-function game(/*add your code here*/){
-    /*add your code here*/
+
+// function game(userChoice){
+//     let pcChoice = Math.random();
+//     // console.log(userChoice);
+//     if (pcChoice <= 0.333){
+//       pcChoice = 'rock';
+//     }
+//     else if (pcChoice > 0.333 && pcChoice <= 0.667){
+//       pcChoice = 'paper';
+//     }
+//     else{
+//       pcChoice = 'scissors';
+//     }
+//     // console.log(pcChoice);
+//     if (userChoice === 'rock' && pcChoice === 'rock'){
+//       return "it's a tie";
+//     }
+//     else if (userChoice === 'rock' && pcChoice === 'paper') {
+//       return 'you lose!';
+//     }
+//     else if (userChoice === 'rock' && pcChoice === 'scissors'){
+//       return 'you win!';
+//     }
+//     else if (userChoice === 'paper' && pcChoice === 'rock'){
+//       return 'you win!';
+//     }
+//     else if(userChoice === 'paper' && pcChoice === 'paper'){
+//       return "it's a tie";
+//     }
+//     else if (userChoice === 'paper' && pcChoice === 'scissors'){
+//       return 'you lose!';
+//     }
+//     else if (userChoice === 'scissors' && pcChoice === 'rock'){
+//       return 'you lose!';
+//     }
+//     else if(userChoice === 'scissors' && pcChoice === 'paper'){
+//       return 'you win!';
+//     }
+//     else if (userChoice === 'scissors' && pcChoice === 'scissors'){
+//       return "it's a tie";
+//     }
+//     else{
+//       return "it's a tie";
+//     }
+// }
+
+// console.log(game('paper'));
+
+function game(userChoice) {
+  let phrase = `it's a tie`;
+  let compChoice = Math.random();
+  if (compChoice <= 0.33) {
+    compChoice = 'rock';
+  } else if (compChoice > 0.33 && compChoice <= 0.66) {
+    compChoice = 'scissors';
+  } else {
+    compChoice = 'paper';
+  }
+  if (compChoice === 'rock') {
+    if (userChoice === 'paper') {
+      phrase = 'you win!';
+    } else if (userChoice === 'scissors') {
+      phrase = 'you lose';
+    }
+  }
+  if (compChoice === 'scissors') {
+    if (userChoice === 'rock') {
+      phrase = 'you win!';
+    } else if (userChoice === 'paper') {
+      phrase = 'you lose!';
+    }
+  }
+  if (compChoice === 'paper') {
+    if (userChoice === 'rock') {
+      phrase = 'you lose!';
+    } else if (userChoice === 'scissors') {
+      phrase = 'you win!';
+    }
+  }
+  return phrase;
 }
-  
+
+console.log(game('paper'));
+// let pcChoice = Math.random();
+//     if (pcChoice <= 0.333){
+//       pcChoice = 'rock';
+//     }
+//     else if (pcChoice > 0.333 && pcChoice <= 0.667){
+//       pcChoice = 'paper';
+//     }
+//     else{
+//       pcChoice = 'scissors';
+//     }
+
+// function game(userChoice, pcChoice){
+//     if (userChoice < Math.random()){
+//     return 'you win!';
+//   }
+//   else if (userChoice > Math.random()){
+//     return 'you lose!';
+//   }
+//   else {
+//     return "it's a tie";
+//   }
+// }
+// console.log(game('paper', pcChoice));
+    
+// function game(userChoice){
+//   if (userChoice === 'rock'){
+//     userChoice = 0.25;
+//   }
+//   else if (userChoice === 'paper'){
+//     userChoice = 0.5;
+//   }
+//   else {
+//     userChoice = 0.75;
+//   }
+
+//   if (userChoice < Math.random()){
+//     return 'you win!';
+//   }
+//   else if (userChoice > Math.random()){
+//     return 'you lose!';
+//   }
+//   else {
+//     return "it's a tie";
+//   }
+// }
+// console.log(game('paper'));
   
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
@@ -144,12 +302,9 @@ Using the miles function below do the following:
   3. Return the number of miles
 */
 
-function miles(/*add your code here*/){
-    /*add your code here*/
-  }
-
-
-
+function miles(kilometers){
+    return kilometers*0.621371;
+}
 //Task 5b - Feet to CM
 /*
 Using the feet function below do the following:
@@ -158,11 +313,9 @@ Using the feet function below do the following:
   3. Return number of feet
 */
 
-function feet(/*add your code here*/){
-    /*add your code here*/
-  }
- 
-
+function feet(centimeters){
+    return centimeters/30.48;
+}
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
@@ -173,11 +326,21 @@ Using the annoyingSong function below do the following:
   2. At each iteration, it should return this string: 
       "(number) bottles of soda on the wall, (number) bottles of soda, take one down pass it around (number left over) bottles of soda on the wall"
 */
+// function annoyingSong(startingNum){
+//   for (let i = startingNum; i > 0; i--){
+//     console.log(`${i} bottles of soda on the wall, ${i} bottles of soda, take one down pass it around ${i - 1} bottles of soda on the wall`);
+//   }
+// }
+// annoyingSong(4);
 
-function annoyingSong(/*add your code here*/){
-        /*add your code here*/
+function annoyingSong(startingNum){
+        while (startingNum > 0){
+          // console.log(startingNum +" bottles of soda on the wall, " +startingNum + " bottles of soda, take one down pass it around " + startingNum-1 + " bottles of soda on the wall");
+          console.log(`${startingNum} bottles of soda on the wall, ${startingNum} bottles of soda, take one down pass it around ${startingNum - 1} bottles of soda on the wall`);
+          startingNum--;
+        }
   }
-
+  annoyingSong(4);
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
@@ -194,14 +357,25 @@ Using the grade function below do the following:
    below 60 = F
 */
   
-function grade(/*add your code here*/){
-    /*add your code here*/
+function grade(numGrade){
+    if (numGrade >= 90){
+      return 'you got an A';
+    }
+    else if (numGrade >= 80 && numGrade < 90){
+      return 'you got a B';
+    }
+    else if (numGrade >= 70 && numGrade < 80){
+      return 'you got a C';
+    }
+    else if (numGrade >= 60 && numGrade < 70){
+      return 'you got a D';
+    }
+    else {
+      return 'you got an F';
+    }
   }
   
   
-  
-  
-
 /*💪💪💪💪💪💪💪💪💪💪 Stretch 💪💪💪💪💪💪💪💪💪💪*/
 
 //Vowel Counter - How many vowels are there?
@@ -215,11 +389,29 @@ Using the vowelCounter function below do the following:
 */
 
 
-function vowelCounter(/*add your code here*/) {
-    /*add your code here*/
+function vowelCounter(userString) {
+    let count = 0;
+    for (let i = 0; i < userString.length; i++){
+        if (userString[i].includes('a')){
+          count++;
+        }
+        if (userString[i].includes('e')){
+          count++;
+        }
+        if (userString[i].includes('i')){
+          count++;
+        }
+        if (userString[i].includes('o')){
+          count++;
+        }
+        if (userString[i].includes('u')){
+          count++;
+        }
+      }
+    return count;
 }
 
-
+console.log(vowelCounter('iuoea'));
 
 /*🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑 Please do not modify anything below this line 🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑*/
 function foo(){
